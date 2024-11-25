@@ -11,10 +11,13 @@ const fileOps = async () => {
     try{
         const data = await fsPromises.readFile(path.join(__dirname, 'files', 'starter.txt'), 'utf8');  // reading data from n file
         console.log(data);
-        await fsPromises.writeFile(path.join(__dirname, 'files', 'promiseWrite.txt'), data)
-        await fsPromises.appendFile(path.join(__dirname, 'files', 'promiseWrite.txt'), '\nNice we met again')
-        await fsPromises.rename(path.join(__dirname, 'files', 'promiseWrite.txt'), path.join(__dirname, 'files', 'promiseComplete.txt'));
-        const newData = await fsPromises.readFile(path.join(__dirname, 'files', 'promiseComplete.txt'), 'utf8');
+        await fsPromises.unlink(path.join(__dirname, 'files', 'starter.txt'))  //unlink is for deleting a file
+
+
+        await fsPromises.writeFile(path.join(__dirname, 'files', 'promiseWrite.txt'), data)  //writing a new file
+        await fsPromises.appendFile(path.join(__dirname, 'files', 'promiseWrite.txt'), '\nNice we met again') // appending to that new file
+        await fsPromises.rename(path.join(__dirname, 'files', 'promiseWrite.txt'), path.join(__dirname, 'files', 'promiseComplete.txt'));  //renaming that  new file
+        const newData = await fsPromises.readFile(path.join(__dirname, 'files', 'promiseComplete.txt'), 'utf8'); // reading that new file
         console.log(newData);
     }catch (err) {
         console.error(err);
