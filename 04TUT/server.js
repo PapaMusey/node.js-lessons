@@ -9,16 +9,28 @@ const EventEmitter = require('events')
 class Emitter extends EventEmitter { }
 // initialize object
 const myEmitter = new Emitter()
+myEmitter.on('log', (msg, fileName) => logEvents(msg, fileName));
 
 const PORT = process.env.PORT || 3500;  // port created
 
 const serverFile = async (filePath, contentType, response) => {
     try {
-        const data = await fsPromises.readFile(filePath, 'utf8');
-        response.writeHead(200, { 'Content-Type': contentType });
-        response.end(data)
+        const rawData = await fsPromises.readFile(
+            filePath,
+            !contentType.includes('image') ? 'utf8' : ''
+        );
+        const data = contentType === 'application/json'
+            ? JSON.parse(rawData) : rawData;
+        response.writeHead(
+            filePath.includes('404.html') ? 404 : 200,
+            { 'Content-Type': contentType }
+        );
+        response.end(
+            contentType === 'application/json' ? JSON.stringify(data) : data
+        );
     } catch (err) {
         console.log(err);
+        myEmitter.emit('log', `${err.name}: ${err.message}`, 'errLog.txt');
         response.statusCode = 500;
         response.end();
     }
@@ -26,6 +38,8 @@ const serverFile = async (filePath, contentType, response) => {
 
 const server = http.createServer((req, res) => {
     console.log(req.url, req.method);
+    myEmitter.emit('log', `${req.url}\t${req.method}`, 'reqLog.txt');
+
     const extension = path.extname(req.url) //extention of the request url
     let contentType;
 
@@ -63,6 +77,7 @@ const server = http.createServer((req, res) => {
     } else {
         filePath = path.join(__dirname, req.url);
     }
+
     // makes .html extension not required in the browser
     if (!extension && req.url.slice(-1) !== '/') filePath += '.html';
 
@@ -71,23 +86,22 @@ const server = http.createServer((req, res) => {
 
     if (fileExists) {
         // serve file
-        serverFile(filePath, contentType,res)
+        serverFile(filePath, contentType, res)
     } else {
         // 404
         // 301 redirect
         // console.log(path.parse(filePath))
         switch (path.parse(filePath).base) {
             case 'old-page.html':
-                res.writeHead(301, { 'location': '/new-page.html' })
+                res.writeHead(301, { 'Location': '/new-page.html' });
                 res.end();
                 break;
             case 'www-page.html':
-                res.writeHead(301, { 'location': '/' })
+                res.writeHead(301, { 'Location': '/' });
                 res.end();
                 break;
             default:
-            //serve a 404 response
-            serverFile(path.join(__dirname,'views', '404.html'), 'text/html', res)
+                serverFile(path.join(__dirname, 'views', '404.html'), 'text/html', res);
         }
     }
 
