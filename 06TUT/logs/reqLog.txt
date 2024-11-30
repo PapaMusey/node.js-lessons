@@ -1,0 +1,8 @@
+20241128	15:51:51	3a10d46e-fa6d-4d04-904d-316bbcf051f0	GET 	 undefined	/
+20241128	15:51:51	60364496-6967-4e24-8c4f-4df01b4659fc	GET 	 undefined	/css/style.css
+20241128	15:55:46	468e5f40-7d01-4fec-b76c-5cb2ac1144dd	OPTIONS 	 https://www.google.com	/
+20241128	15:55:46	bfc5e451-53d6-42e8-bd80-70f6436bc666	GET 	 https://www.google.com	/
+20241128	16:08:13	456d5b72-5b41-46fa-80d5-9c6769df9277	OPTIONS 	 https://www.google.com	/
+20241128	16:08:13	53f5a343-660e-4c95-ab83-ee8037ec8616	GET 	 https://www.google.com	/
+20241128	16:08:27	553bc6ec-c607-4713-bd80-240af538cf07	OPTIONS 	 https://www.google.com	/
+20241128	16:08:27	848012a4-4bc6-4a70-8ee9-b283480980bf	GET 	 https://www.google.com	/
