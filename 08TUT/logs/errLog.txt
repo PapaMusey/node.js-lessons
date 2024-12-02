@@ -1,0 +1,6 @@
+20241130	21:23:54	1cd9d3e0-2e38-4ce2-b579-ee3b37d99e16	Error: Not allowed by CORS
+20241130	21:23:54	7c7678ee-496f-4359-8bcf-40962237c76d	Error: Not allowed by CORS
+20241130	21:24:03	1f5903ff-d5e9-48ab-a67a-d65948f9948c	Error: Not allowed by CORS
+20241130	21:25:46	a0595fa4-0e1d-4505-96e3-cd86df78fc8c	Error: Not allowed by CORS
+20241202	14:32:19	7d324aa5-f310-4d94-a56e-e8810e0c699c	SyntaxError: Unexpected non-whitespace character after JSON at position 58
+20241202	14:32:25	94231aff-5eb6-4512-9c1b-feaf8e0b33ba	SyntaxError: Unexpected non-whitespace character after JSON at position 55
