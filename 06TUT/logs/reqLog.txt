@@ -6,3 +6,17 @@
 20241128	16:08:13	53f5a343-660e-4c95-ab83-ee8037ec8616	GET 	 https://www.google.com	/
 20241128	16:08:27	553bc6ec-c607-4713-bd80-240af538cf07	OPTIONS 	 https://www.google.com	/
 20241128	16:08:27	848012a4-4bc6-4a70-8ee9-b283480980bf	GET 	 https://www.google.com	/
+20241130	21:05:28	6036e9f5-5dbd-40a4-a984-800896f26570	OPTIONS 	 https://www.google.com	/
+20241130	21:05:28	e783f88a-77d8-4f9a-8882-644a3ada522a	GET 	 https://www.google.com	/
+20241130	21:05:45	3ef392d1-51cc-4010-9d02-ecd2c6f71a20	OPTIONS 	 https://www.google.com	/
+20241130	21:05:45	b4539fa2-be61-4c25-b325-5dc4563eca3f	GET 	 https://www.google.com	/
+20241130	21:23:54	b7593668-1df1-455a-b038-cccaec84bd30	OPTIONS 	 https://www.google.com	/
+20241130	21:23:54	5a606254-6a21-4813-9917-2f521085d444	GET 	 https://www.google.com	/
+20241130	21:24:03	2b300b4c-88bc-4f06-ac4c-d33973840c11	GET 	 undefined	/
+20241130	21:25:46	ac4e2952-c258-4154-ae77-5411cf71070a	GET 	 undefined	/
+20241130	21:37:15	94d0d596-0b88-452c-8e97-97114ac8655f	GET 	 undefined	/
+20241130	21:37:15	4ecf533f-13cf-4e8c-b230-734b760cd500	GET 	 undefined	/css/style.css
+20241130	21:37:17	2c3057a2-5ec7-4216-90e9-4c9e7af04033	GET 	 undefined	/
+20241130	21:37:17	d61dce59-e743-444f-b653-1f8a8e61c21f	GET 	 undefined	/css/style.css
+20241130	21:37:30	ed49ae4a-2074-42b0-8240-0f3ec040000b	GET 	 undefined	/andy
+20241130	21:37:30	3a5a5581-b591-4c9b-af0a-8ac6c5b7556e	GET 	 undefined	/css/style.css

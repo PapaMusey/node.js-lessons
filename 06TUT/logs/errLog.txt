@@ -1,0 +1,4 @@
+20241130	21:23:54	1cd9d3e0-2e38-4ce2-b579-ee3b37d99e16	Error: Not allowed by CORS
+20241130	21:23:54	7c7678ee-496f-4359-8bcf-40962237c76d	Error: Not allowed by CORS
+20241130	21:24:03	1f5903ff-d5e9-48ab-a67a-d65948f9948c	Error: Not allowed by CORS
+20241130	21:25:46	a0595fa4-0e1d-4505-96e3-cd86df78fc8c	Error: Not allowed by CORS
