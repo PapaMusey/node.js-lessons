@@ -1,5 +1,5 @@
 const data = {
-    employees: require('../data/employees.json'),  // data folder refers to the database. Dave Gray uses the model folder
+    employees: require('../model/employees.json'),
     setEmployees: function (data) {this.employees = data}
 };
 
@@ -7,7 +7,7 @@ const getAllEmployees = (req, res) => {
     res.json(data.employees)
 }
 
-const createNewEmployees = (req, res) => {
+const createNewEmployee = (req, res) => {
     const newEmployee = {
         id: data.employees?.length ? data.employees[data.employees.length - 1].id + 1 : 1, // grabbing last id in the json array and adding one to the id that already exists
         firstname: req.body.firstname,
@@ -46,16 +46,16 @@ const deleteEmployee = (req, res) => {
 }
 
 const getEmployee = (req,res) => {
-    const employee = data.employees.find(emp => emp.id === parseInt(req.params.id)); // find out who that employee is
+    const employee = data.employees.find(emp => emp.id === parseInt(req.params.id)); // find out who tha employee is
     if (!employee) {
         return res.status(400).json({ "message": `Employee ID ${req.params.id} not found` });
     }
-    res.json(employee); //else return this line
+    res.json(employee);
 }
 
 module.exports = {
     getAllEmployees,
-    createNewEmployees,
+    createNewEmployee,
     updateEmployee,
     deleteEmployee,
     getEmployee

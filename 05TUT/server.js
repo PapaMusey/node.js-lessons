@@ -7,6 +7,7 @@ app.get('/', (req, res) => {
     // res.sendFile('./views/index.html', { root:__dirname }); //filepath, option .... any of these two ways are used
     res.sendFile(path.join(__dirname, 'views', 'index.html')); //any of these two ways are used
 })
+
 app.get('/new-page(.html)?', (req, res) => { // this makes .html optional in the request
     res.sendFile(path.join(__dirname, 'views', 'new-page.html')); 
 })

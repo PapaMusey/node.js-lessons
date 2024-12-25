@@ -10,10 +10,10 @@ const PORT = process.env.PORT || 3500;  // port created
 app.use(logger)
 
 //Cross Origin Resource Sharing [CORS]
-const whitelist = ['https://www.yoursite.com', 'http://127.0.0.1', 'http://localhost:3500']
+const whitelist = ['https://www.yoursite.com', 'http://127.0.0.1', 'http://localhost:3500'] // this list is allowed to access the backend 
 const corsOptions = {
     origin: (origin, callback) => {
-        if (whitelist.indexOf(origin) !== -1 || !origin) {
+        if (whitelist.indexOf(origin) !== -1 || !origin) { // || !origin is required to be used during development which is equivalent to undefined but should be removed after development
             callback(null,true)
         }else {
             callback(new Error ('Not allowed by CORS'))

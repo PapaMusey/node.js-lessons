@@ -23,9 +23,8 @@ const logEvents = async (message, logName) => {
 
 const logger = (req, res, next) => {
     logEvents(`${req.method} \t ${req.headers.origin}\t${req.url}`, 'reqLog.txt')  //params of logEvents(a,b) - first is the message and second is the file to write to or create
-    // req.headers.origin - where(origin) the request is coming from & req.url - what url was requested
+    // req.headers.origin - where(origin) the request is coming from 
     // eg. GET method from Google.com requesting the Index page
-    // then create or write to this file 'reqLog.txt'
     console.log(`${req.method}  ${req.path}`)
     next();
 }
